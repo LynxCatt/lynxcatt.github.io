@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>LynxCat&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="LynxCat&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="LynxCat&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="LynxCat&#039;s Blog"><meta property="og:url" content="https://lynxcats.github.io/"><meta property="og:site_name" content="LynxCat&#039;s Blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://lynxcats.github.io/img/og_image.png"><meta property="article:author" content="LynxCat"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://lynxcats.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lynxcats.github.io"},"headline":"LynxCat's Blog","image":["https://lynxcats.github.io/img/og_image.png"],"author":{"@type":"Person","name":"LynxCat"},"publisher":{"@type":"Organization","name":"LynxCat's Blog","logo":{"@type":"ImageObject","url":"https://lynxcats.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="LynxCat&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="My Github" href="https://github.com/lynxcatt/"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-12-10T16:00:00.000Z" title="12/11/2023, 12:00:00 AM">2023-12-11</time>发表</span><span class="level-item"><time dateTime="2024-01-09T08:25:20.407Z" title="1/9/2024, 4:25:20 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></span><span class="level-item">6 分钟读完 (大约894个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/12/11/%E9%A2%98%E8%A7%A3%EF%BC%9A%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3/">题解：速战速决</a></p><div class="content"><p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/aacbe/post-ti-jie-p9137">进入博客食用更香！</a></strong></p>
+<p>一道贪心题。</p>
+<h2 id="无解"><a href="#无解" class="headerlink" title="无解"></a>无解</h2><p>很明显的，当 $n&#x3D;1$ 时，因为小I先手，小J可以直接收牌，所以小I无法获胜。</p>
+<h2 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h2><h3 id="Case-1-小-I-手上没有任何能配对的牌"><a href="#Case-1-小-I-手上没有任何能配对的牌" class="headerlink" title="Case 1 小 I 手上没有任何能配对的牌"></a>Case 1 小 I 手上没有任何能配对的牌</h3><p>也就是说对于每一对牌总有一张在小I的手上。</p>
+<p>此时我们应该先打出对面出牌序列中最后一张牌，随后对面出什么牌我们就跟着出什么牌，确保小J出的牌能被我们立刻收掉。</p>
+<p>最后对面出他的最后一张牌把我们出的第一张牌收掉，此时我们手上的牌全是成对的，对方只有一对牌。随便出一张手上的牌把对面的一张牌收掉，对面下次出牌就必输。</p>
+<h3 id="Case-2-小-I-贪心每一回合"><a href="#Case-2-小-I-贪心每一回合" class="headerlink" title="Case 2 小 I 贪心每一回合"></a>Case 2 小 I 贪心每一回合</h3><p>此时我们手中必有一对牌。我们能用这对牌来干嘛呢？一开始我们埋下这张牌作为保险，如果后面对面想收牌（牌堆里的或是我手上的），我们就打出这对牌的另一张把整个牌堆清空。</p>
+<p>我们可以像 $\text{Case 1}$ 一样，对面出牌我们紧跟着收牌 ，考虑以下几种情况（以下 $A_i$ 指我们出的编号为 $i$ 的牌，$B_i$ 指对面出的编号为 $i$ 的牌，$[\cdot\cdot\cdot]$ 表示当前时刻之后的假设情况）：</p>
+<ul>
+<li><p>$A_?…B_i[…A_i]$ 以及 $A_?…B_i[…B_i]$ 这两种情况都会对我们的策略造成威胁，因此在这个时候应该立即收掉所有牌。</p>
+</li>
+<li><p>$A_i…A_iB_j[…]$ 这种情况会使我们<strong>误收</strong>场上所有牌，导致对方出的 $B_j$ 要么收不掉（这意味着我们要花额外的步数去收这张牌）或是对面会在后面某一时刻清场（这意味着我们要么输，要么步数更多）。</p>
+</li>
+<li><p>其余情况按正常的成对出牌。</p>
+</li>
+</ul>
+<p>基于以上几点对方就不能在任何时刻收牌，因为我们要么快人一步把前面的收了要么把他出的第一张牌直接收了，而此时也会达到步数最小值，不难发现这个步数最小值是 $n$ 。</p>
+<p>* 蒟蒻个人理解，可能有些问题欢迎大家指出！</p>
+<h2 id="码"><a href="#码" class="headerlink" title="码"></a>码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">300010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> s[<span class="number">2</span>*MAXN], top, cnts[MAXN];</span><br><span class="line"><span class="type">int</span> mine[MAXN];</span><br><span class="line"><span class="type">int</span> a[MAXN];</span><br><span class="line">queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;  <span class="comment">// 清理公共牌堆</span></span><br><span class="line">    <span class="keyword">while</span> (s[top] != x) &#123;</span><br><span class="line">        cnts[s[top]]--;</span><br><span class="line">        mine[s[top]]++;</span><br><span class="line">        q.<span class="built_in">push</span>(s[top]);</span><br><span class="line">        top--;</span><br><span class="line">    &#125;</span><br><span class="line">    cnts[s[top]]--;</span><br><span class="line">    mine[s[top]]++;</span><br><span class="line">    q.<span class="built_in">push</span>(s[top]);</span><br><span class="line">    top--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;  <span class="comment">// 打牌</span></span><br><span class="line">    s[++top] = x;</span><br><span class="line">    cnts[x]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">&quot;-1&quot;</span>)&amp;<span class="number">0</span>;  <span class="comment">// 无解</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        mine[i] = <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> st = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, a+i);</span><br><span class="line">        mine[a[i]]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n &amp;&amp; st == <span class="number">-1</span>; i++) <span class="keyword">if</span> (mine[i] == <span class="number">2</span>) st = i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = mine[i]-(i==st); j &gt;= <span class="number">1</span>; j--) q.<span class="built_in">push</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (st == <span class="number">-1</span>) &#123;  <span class="comment">// 没有成对的牌</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n%d&quot;</span>, n+<span class="number">2</span>, a[n]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) <span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, a[i]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot; %d %d&quot;</span>, a[<span class="number">1</span>], a[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n%d&quot;</span>, n, st);</span><br><span class="line">    mine[st]--;</span><br><span class="line">    <span class="built_in">push</span>(st);</span><br><span class="line">    <span class="built_in">push</span>(a[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> x = a[i];</span><br><span class="line">        <span class="keyword">if</span> (mine[x] || cnts[x]) &#123;  <span class="comment">// 有威胁。清空牌堆</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, s[<span class="number">1</span>]);</span><br><span class="line">            <span class="built_in">pop</span>(s[<span class="number">1</span>]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (q.<span class="built_in">front</span>() == s[<span class="number">1</span>]) &#123;  <span class="comment">// 会误收牌堆</span></span><br><span class="line">                q.<span class="built_in">push</span>(q.<span class="built_in">front</span>());  <span class="comment">// 将队首移到队尾</span></span><br><span class="line">                q.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> nxt = q.<span class="built_in">front</span>();</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, nxt);</span><br><span class="line">            <span class="keyword">if</span> (cnts[nxt]) &#123;</span><br><span class="line">                <span class="built_in">pop</span>(nxt);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">push</span>(nxt);</span><br><span class="line">                mine[nxt]--;</span><br><span class="line">                q.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">push</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-12-03T16:00:00.000Z" title="12/4/2023, 12:00:00 AM">2023-12-04</time>发表</span><span class="level-item"><time dateTime="2024-01-09T08:00:55.698Z" title="1/9/2024, 4:00:55 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">学习总结</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a></span><span class="level-item">15 分钟读完 (大约2311个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/12/04/%E5%8C%BA%E9%97%B4DP%E6%80%BB%E7%BB%93/">区间DP总结</a></p><div class="content"><h1 id="考试总结"><a href="#考试总结" class="headerlink" title="考试总结"></a>考试总结</h1><h2 id="Task-1"><a href="#Task-1" class="headerlink" title="Task 1"></a><strong>Task 1</strong></h2><h3 id="正解"><a href="#正解" class="headerlink" title="正解"></a><strong>正解</strong></h3><p>性质题，找规律。</p>
+<p>规律如下：</p>
+<blockquote>
+<p>从 $n&#x3D;15$ 开始：<br>$108,188,200,208,288,688,888,1088,1888,2008,2888,8888\dots$</p>
+</blockquote>
+<p>容易发现  $a_n&#x3D;a_{n-7}\times10+8\quad(n \geq 22)$</p>
+<p>前14个要特判。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无</span><br></pre></td></tr></table></figure>
+
+<h3 id="关键点"><a href="#关键点" class="headerlink" title="关键点"></a><strong>关键点</strong></h3><p>暴力找规律。</p>
+<h3 id="死因"><a href="#死因" class="headerlink" title="死因"></a><strong>死因</strong></h3><p>20 开头的规律没找到，就是没打暴力找规律。</p>
+<h2 id="Task-2"><a href="#Task-2" class="headerlink" title="Task 2"></a><strong>Task 2</strong></h2><h3 id="正解-1"><a href="#正解-1" class="headerlink" title="正解"></a><strong>正解</strong></h3><p>搜索。</p>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a><strong>优化</strong></h3><p>这道题可以用 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/mzchuan/p/11469809.html">十字链表（Dancing Links X）</a> 加速，但是爆搜就能跑出 $400\text{ms}$ 的好成绩。</p>
+<p>别名：双向循环十字链表。</p>
+<h3 id="为什么能跑这么快"><a href="#为什么能跑这么快" class="headerlink" title="为什么能跑这么快"></a><strong>为什么能跑这么快</strong></h3><p>关键点：</p>
+<ul>
+<li>对于这种搜索时间最不利的是 $5 \times 6$ 的矩阵，并且是<strong>无解</strong>的情况。</li>
+<li>正常来说，如果不要求不能重复走点，时间复杂度最坏为 $O(2^{4} \times 3^{14} \times 4^{16})$ ，即四个角（4个）上的点有两种走法，边上的点（14个）有三种走法，内部的点（16个）有四种走法。</li>
+<li>但是不能重复走点的情况下，时间复杂度最坏为 $O(1^{4} \times 2^{14} \times 3^{16})$，但是考虑到实际情况，加一个可行性剪枝，最后 $\text{dfs()}$ 函数大概只会运行到 $5 \times 10^6$ 次。</li>
+<li>爆搜敢冲就能过。</li>
+</ul>
+<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a><strong>题目来源</strong></h3><p>《永远的七日之都》</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无</span><br></pre></td></tr></table></figure>
+
+<h3 id="死因-1"><a href="#死因-1" class="headerlink" title="死因"></a><strong>死因</strong></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; i++)  <span class="comment">// wssb</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Task-3"><a href="#Task-3" class="headerlink" title="Task 3"></a><strong>Task 3</strong></h2><h3 id="正解-2"><a href="#正解-2" class="headerlink" title="正解"></a><strong>正解</strong></h3><p>以 $dp$ 为辅助的搜索题。</p>
+<p>说真的，这道题不难。一切的思路都是自然而然的，从爆搜到可行性剪枝再到用 $dp$ 完成可行性剪枝，最后实现的代码难度也不高。</p>
+<h3 id="关键点-1"><a href="#关键点-1" class="headerlink" title="关键点"></a><strong>关键点</strong></h3><p>$dp$ 可能不是一道题的全部而是一道题的部分。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a><strong>思路</strong></h3><ul>
+<li>先想爆搜，同一位按字典序从大到小搜，期望得分：$30-40;pts$。</li>
+<li>再想剪枝，用 $dp$ 判定后面有没有可能有解，计算一个点后最多能获取到的权值，再加上已经搜到的权值看它能不能 $\geq x$ 。</li>
+<li>怎么做 $dp$ ？记录 $dp$ 长度和最后一位，预处理 $dp$ 时间复杂度为 $O(4n)$ 。整个算法时间复杂度见课后思考。</li>
+</ul>
+<h3 id="课后思考"><a href="#课后思考" class="headerlink" title="课后思考"></a><strong>课后思考</strong></h3><ul>
+<li>整体时间复杂度是 $O(n+k)$ 还是 $O(nk)$ ？理论分析应该是 $O(n+k)$ 。</li>
+</ul>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无</span><br></pre></td></tr></table></figure>
+
+<h3 id="死因-2"><a href="#死因-2" class="headerlink" title="死因"></a><strong>死因</strong></h3><p>并没有死，打了暴力。还是全场唯一得分点（$30;pts$）。</p>
+<p>但是事实上我的暴力打得还有优化空间且有一个小问题。</p>
+<h2 id="Task-4"><a href="#Task-4" class="headerlink" title="Task 4"></a><strong>Task 4</strong></h2><h3 id="正解-3"><a href="#正解-3" class="headerlink" title="正解"></a><strong>正解</strong></h3><p>区间 $dp$ 。</p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a><strong>思路</strong></h3><ul>
+<li>考虑朴素区间 $dp$ ，对于每个 $l\sim r$ 区间，枚举小区间并转移，时间复杂度 $O(n^4)$ 。</li>
+<li>但是这种做法会 $\text{WA}$ 掉，因为这样记录状态会有情况没考虑到。所以考虑重设状态 $f_{i,j,max,min}$ 表示区间 $i\sim j$ 内已经通过多次操作后剩下的最大值为 $max$ 、最小值为 $min$ 时，所花的最小代价。而后我们定义 $ans_{i,j}$ 为 $i\sim j$ 这段区间被选空的最终答案（就是题目中说的那个最后输出的答案）。</li>
+<li>接下来考虑怎么转移。$ans_{i,j}$ 的转移很简单，就是 $ans_{i,j}&#x3D;max(f_{i,j,max,min}+a+b\times(max-min))$ 。而 $f_{i,j,max,min}$ 的转移，首先应该枚举中间断点 $k$ 就应该有以下三种情况：<ul>
+<li>$min$ 与 $max$ 都在左边，右边被选空：$f_{i,j,max,min}&#x3D;f_{i,k,max,min}+ans_{k+1,j}$ 。</li>
+<li>$min$ 与 $max$ 都在右边，左边被选空：$f_{i,j,max,min}&#x3D;ans_{i,k}+f_{k+1,j,max,min}$ 。</li>
+<li>$min$ 与 $max$ 左右两边都有：$f_{i,j,max,min}&#x3D;f_{i,k,max,min}+f_{k+1,j,max,min}$ 。</li>
+</ul>
+</li>
+<li>容易发现的是，这样转移肯定不会少考虑情况，接下来就是考虑这么转移是否会多考虑情况？如果多考虑了，对答案有没有影响？</li>
+<li>【这里不会】（zhw看到了comment一下）</li>
+<li>结论：会多考虑情况但是这些情况不会比答案更优。</li>
+<li>注意点：$w_i \leq 1000$ ，需要离散化处理。</li>
+</ul>
+<h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5336">THUSC 2016 成绩单</a></p>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="区间DP总结"><a href="#区间DP总结" class="headerlink" title="区间DP总结"></a>区间DP总结</h1><ul>
+<li><strong>区间DP是变化之神！</strong></li>
+<li>$\text{Link Start!}$</li>
+</ul>
+<p>通过例题看看区间DP的一些套路和新的思路。</p>
+<p>不如按题目分类来说。</p>
+<h2 id="A-E-普通-模板区间DP"><a href="#A-E-普通-模板区间DP" class="headerlink" title="A~E 普通&#x2F;模板区间DP"></a>A~E 普通&#x2F;模板区间DP</h2><ul>
+<li><strong>能量项链</strong>——普通区间DP</li>
+<li><strong>石子合并（加强版）</strong>——四边形不等式优化（不要求掌握）</li>
+<li><strong>【USACO 3.3.5】A Game游戏 IOI’96</strong>——带了博弈论的区间DP（个人觉得有点意思）</li>
+<li><strong>做错的作业</strong>——括号匹配类型的区间DP</li>
+<li><strong>【CQOI 2007】涂色</strong>——涂色类型区间DP</li>
+</ul>
+<h2 id="F-G-凸多边形区间DP"><a href="#F-G-凸多边形区间DP" class="headerlink" title="F,G 凸多边形区间DP"></a>F,G 凸多边形区间DP</h2><p>这一类型的DP特点是建立模型比较难。</p>
+<p>要点梳理：</p>
+<ul>
+<li>无论从哪一个点开始都一样，因此不必拆环成链。</li>
+<li>状态定义为：$f_{i,j}$ 表示将 $i\sim j$ 这一段点的区间转化为三角形的最小价值。</li>
+<li>状态转移为：$f_{i,j}&#x3D;\min(f_{i,j},f_{i,k}+f_{k,j}+\text{cost}(i,j,k))$ ，即 $k$ 是两个子区间的公共端点， 而将他们合并后能组合出新的三角形 $\Delta A_iA_jA_k$ ，因此要加上这个新三角形造成的权值。</li>
+</ul>
+<h2 id="H-字符串折叠"><a href="#H-字符串折叠" class="headerlink" title="H 字符串折叠"></a>H 字符串折叠</h2><p>我认为这道题的思路是捋得最清的，因为这道题真的很简单。</p>
+<p>大致思路就是有两种转移：一是组合两段已压缩的区间，二是将这段区间压缩，时间复杂度大致为 $O(n^4)$ ，能刚刚好卡着过（据说用预处理或哈希或KMP找最长重复子串的长度能够将这道题卡到 $O(n^3)$ 的时间复杂度，然鹅我不会）。</p>
+<h2 id="R-压缩"><a href="#R-压缩" class="headerlink" title="R 压缩"></a>R 压缩</h2><p>这也是一道压缩字符串的题目。</p>
+<p>但是这里对 $M$ 和 $R$ 的处理要更为复杂。</p>
+<p>具体而言，这道题的 $f_{i,j,k}\quad(1\leq i\leq j\leq n,k\subset{0,1})$ 多了一维，用于标记 $i\sim j$ 这段区间内是（$1$）否（$0$）存在 $M$ 。</p>
+<p>状态转移：</p>
+<ul>
+<li>$f_{i,j,0}&#x3D;f_{i,k,0}+j-k$</li>
+<li>$f_{i,j,1}&#x3D;\min(f_{i,k,0},f_{i,k,1})+\min(f_{k+1,j,0},f_{k+1,j,1})$</li>
+<li>$f_{i,j,0}&#x3D;f_{i,mid,0}+1\quad\text{when }[i,j]\text{ can compress}$</li>
+</ul>
+<h2 id="J-表达式的亿种可能性"><a href="#J-表达式的亿种可能性" class="headerlink" title="J 表达式的亿种可能性"></a>J 表达式的亿种可能性</h2><p>最有意义的题目之一。</p>
+<p>维护的 $f_{i,j}$ 就是答案所求，关键就在转移。</p>
+<p>弄清楚以下几点：</p>
+<ul>
+<li>$\times$ 的转移不需要别的东西，只需要 $f_{i,j}&#x3D;f_{i,k}\times f_{k+1,j} \times\text{val}$</li>
+<li>$+$ 和 $-$ 的转移需要考虑左边的括号个数和右边的括号个数（详见第一次提交内的代码推导），最终转移式为：$f_{i,j}&#x3D;((j-k-1)!f_{i,k}+(k-i)!f_{k+1,j})\times\text{val}$</li>
+<li>但是以上转移式只考虑了先放完左边的括号再放右边的括号，然而，我们可以左右交替来回放，并且，左边内括号的顺序已经是我们在 $f_{i,k}$ 中内定好的了。因此 $\text{val}&#x3D;\frac{(j-i-1)!}{(k-i)!(j-k-1)!}$ 作为系数。</li>
+</ul>
+<h2 id="M-有味道的数字"><a href="#M-有味道的数字" class="headerlink" title="M 有味道的数字"></a>M 有味道的数字</h2><p>最具有启发性的一题。</p>
+<p>这道题有几个性质需要搜索搜出来——只有 $3$ 和 $7$ 无法表示，表示 $5000$ 以内的数字最多只会用到长度为 $11$ 的前缀。</p>
+<p>$f_{i,j}$ 表示 $i\sim j$ 这段区间内能表示出来的值（是个数组）这种思想有个很NB的名字叫做 **离散_____**（人话：打表）。</p>
+<p>即用 $\text{vector}$ 存储值，单次转移时间复杂度就是 $O(nm)$ （ $n,m$ 表示合并的两个 $\text{vector}$ ） ，玄学下降！</p>
+<p>而转移嘛……人人都会。</p>
+<h2 id="Q-单调栈"><a href="#Q-单调栈" class="headerlink" title="Q 单调栈"></a>Q 单调栈</h2><p>搜索最上牌面的一题。</p>
+<p>这道题思路没什么好说的，只是注意一下有的时候记忆化搜索比循环区间DP好写。</p>
+<h2 id="区间DP的一点小知识"><a href="#区间DP的一点小知识" class="headerlink" title="区间DP的一点小知识"></a>区间DP的一点小知识</h2><p>我个人一般会这么打区间DP：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> len = <span class="number">2</span>; len &lt;= n; len++) &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i+len<span class="number">-1</span> &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> j = i+len<span class="number">-1</span>;</span><br><span class="line">		<span class="comment">// ...</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然而这么打常数是比较大的，优化写法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">2</span>; j &lt;= n; j++) &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = j<span class="number">-1</span>; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">		<span class="comment">// ...</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>据说这样能优化很多。</p>
+<p>我认为区间DP还有一类很重要的题，典型例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1220">关路灯</a></p>
+<h2 id="区间DP的特征"><a href="#区间DP的特征" class="headerlink" title="区间DP的特征"></a>区间DP的特征</h2><ul>
+<li>在操作中需要<strong>将两端区间合并</strong>，合并时存在固定的转移关系。</li>
+<li>在操作中需要<strong>将子区间转移</strong>。</li>
+</ul>
+<h2 id="怎么看需不需要多开维数"><a href="#怎么看需不需要多开维数" class="headerlink" title="怎么看需不需要多开维数"></a>怎么看需不需要多开维数</h2><p>很明显，当目前的状态定义会出现明显重复统计或是限制条件不够时要多开空间。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-28T16:00:00.000Z" title="11/29/2023, 12:00:00 AM">2023-11-29</time>发表</span><span class="level-item"><time dateTime="2024-01-09T07:45:10.700Z" title="1/9/2024, 3:45:10 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">解题报告</a></span><span class="level-item">2 分钟读完 (大约326个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/29/2023%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">2023解题报告</a></p><div class="content"><h2 id="十一月"><a href="#十一月" class="headerlink" title="十一月"></a>十一月</h2><p>开这个坑已经是月底了，记录一下几个题目。</p>
+<h3 id="Atcoder-Beginning-Contest-330-E-Mex-and-Update"><a href="#Atcoder-Beginning-Contest-330-E-Mex-and-Update" class="headerlink" title="Atcoder Beginning Contest 330 E - Mex and Update"></a>Atcoder Beginning Contest 330 E - Mex and Update</h3><p>我认为这是一道不错的性质题。</p>
+<p>当时在考场上看出了这道题有性质，但是并没有推导出性质。性质主要就是对于一个长度为 $n$ 的数组，其 $\text{mex}$ 一定是在 $0$ 到 $n$ 内的，至于怎么证明……简单抽屉原理。</p>
+<p>然后就是怎么维护这个 $\text{mex}$ ，可以用 $\text{set}$ 记录没有在数组中的 $0$ 到 $n$ 的数的集合，因为 $set$ 可以自动排序，所以查询就是 $\text{set.begin}$ ，维护时还需要维护每个数在数列中的出现次数，不然会误加元素进 $\text{set}$。没了。</p>
+<h3 id="Codeforces-1900-E-Transitive-Graph"><a href="#Codeforces-1900-E-Transitive-Graph" class="headerlink" title="Codeforces 1900 E - Transitive Graph"></a>Codeforces 1900 E - Transitive Graph</h3><p>最考码力の一题。</p>
+<p>首先还是有个性质（还没严格证明）：如果一堆点在原图SCC内，那么最后它们一定能化成一个完全图——这个SCC内每个点，都能直接互相到达。</p>
+<p>因此，我们可以先缩点，然后对于缩出来的点建DAG跑拓扑排序，答案也可以在拓扑过程中更新。That’s all.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-26T16:00:00.000Z" title="11/27/2023, 12:00:00 AM">2023-11-27</time>发表</span><span class="level-item"><time dateTime="2024-01-09T07:49:44.600Z" title="1/9/2024, 3:49:44 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">学习总结</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E6%95%B0%E5%AD%A6/">数学</a></span><span class="level-item">8 分钟读完 (大约1250个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/27/%E6%AC%A7%E6%8B%89%E5%8F%8D%E6%BC%94/">欧拉反演</a></p><div class="content"><p>果果要求掌握的东西当然是要掌握的咯。</p>
+<h2 id="最终形式"><a href="#最终形式" class="headerlink" title="最终形式"></a>最终形式</h2><p>$$<br>\Large{n&#x3D;\sum_{d|n}^{}}{\varphi(d)}<br>$$</p>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>$$<br>\large\because n&#x3D;\sum_{d|n}\sum_{j&#x3D;1}^{n}{[\gcd(j,n)&#x3D;d]}<br>$$</p>
+<p>解释一下，首先，这里的 $\gcd(j,n)$ 一定是只有一个值，不可能说有两个不同的值来自同一个 $\gcd(j,n)$ ；其次，为什么这一坨东西等于 $n$ 呢，因为其一说的每个 $\gcd$ 都有唯一确定的值，因此我们只需要枚举 $\gcd$ 的每种可能并枚举所有 $n$ 以内的正整数就必然有且仅有一种可能的 $d$ 满足每组 $\gcd(j,n)&#x3D;d$ 。</p>
+<p>换句话说，因为一个 $\gcd(j,n)$ 只对应唯一一个 $d$ ，这里我们把所有可能的 $\gcd$ 的值和所有的 j 都枚举了自然其值也就等于 $n$ 了（主要就是说明一个不重也不漏）。</p>
+<p>$$<br>\large\therefore \ n&#x3D;\sum_{d|n}\sum_{j&#x3D;1}^{\frac{n}{d}}{[\gcd(j,\frac{n}{d})&#x3D;1]}<br>$$</p>
+<p>这里没什么好说的，目的是把 $\gcd$ 的值化为 $1$ 后能转化成欧拉函数的形式。</p>
+<p>$$<br>\large\therefore n&#x3D;\sum_{d|n}{\varphi(\frac{n}{d})}<br>$$</p>
+<p>$$<br>\large\therefore n&#x3D;\sum_{d|n}{\varphi(d)}<br>$$</p>
+<p>这里是因为每个  $\frac{n}{d}$ 和 $d$ 是对应的，所以能如此转化。</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><ul>
+<li>多组数据，每组数据给出一个数 $n$ ，求 $\sum_{i&#x3D;1}^{n}{\gcd(i,n)}$ 。</li>
+</ul>
+<p>利用欧拉反演，改变题目公式如下：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}{\sum_{d|\gcd(i,n)}{\varphi(d)}}<br>$$</p>
+<p>拆开 $\gcd$ 得：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}{\sum_{d|i,d|n}{\varphi(d)}}<br>$$</p>
+<p>改变循环顺序得：</p>
+<p>$$<br>\sum_{d|n}\varphi(d)\sum_{i&#x3D;1}^{n}[d|i]<br>$$</p>
+<p>化简得：</p>
+<p>$$<br>\sum_{d|n}\varphi(d)\frac{n}{d}<br>$$</p>
+<p>关于推导式子就没了。这时只需将 $\text{phi}$ 预处理，每次询问 $\sqrt{n}$ 复杂度。</p>
+<ul>
+<li>CF1900D Small GCD</li>
+</ul>
+<p>先排序，可得以下原公式：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{i-1}\gcd(a_i,a_j)(n-i)<br>$$</p>
+<p>带入欧拉反演如下：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{i-1}(\sum_{d|\gcd(a_i,a_j)}{\varphi(d)})(n-i)<br>$$</p>
+<p>化简：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}(n-i)\sum_{j&#x3D;1}^{i-1}\sum_{d|a_i,d|a_j}{\varphi(d)}<br>$$</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}(n-i)\sum_{d|a_i}\varphi(d)\sum_{j&#x3D;1}^{i-1}[d|a_j]<br>$$</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}(n-i)\sum_{d|a_i}\varphi(d)\cdot cnt_{d}<br>$$</p>
+<p>其中我们可以边枚举 $i$ 边处理 $cnt_d$ ，并预处理 $\varphi(x)$ 。因此总时间复杂度为 $O(M+TN\sqrt{M})$ ，$M$ 表示 $a_i$ 的值域，还会有一些小常数，会有点卡常。</p>
+<p>果果要求掌握的东西当然是要掌握的咯。</p>
+<h2 id="最终形式-1"><a href="#最终形式-1" class="headerlink" title="最终形式"></a>最终形式</h2><p>$$<br>\Large{n&#x3D;\sum_{d|n}^{}}{\varphi(d)}<br>$$</p>
+<p>证明</p>
+<p>$$<br>\large\because n&#x3D;\sum_{d|n}\sum_{j&#x3D;1}^{n}{[\gcd(j,n)&#x3D;d]}<br>$$</p>
+<p>解释一下，首先，这里的 $\gcd(j,n)$ 一定是只有一个值，不可能说有两个不同的值来自同一个 $\gcd(j,n)$ ；其次，为什么这一坨东西等于 $n$ 呢，因为其一说的每个 $\gcd$ 都有唯一确定的值，因此我们只需要枚举 $\gcd$ 的每种可能并枚举所有 $n$ 以内的正整数就必然有且仅有一种可能的 $d$ 满足每组 $\gcd(j,n)&#x3D;d$ 。</p>
+<p>换句话说，因为一个 $\gcd(j,n)$ 只对应唯一一个 $d$ ，这里我们把所有可能的 $\gcd$ 的值和所有的 $j$ 都枚举了自然其值也就等于 $n$ 了（主要就是说明一个不重也不漏）。</p>
+<p>$$<br>\large\therefore \ n&#x3D;\sum_{d|n}\sum_{j&#x3D;1}^{\frac{n}{d}}{[\gcd(j,\frac{n}{d})&#x3D;1]}<br>$$</p>
+<p>这里没什么好说的，目的是把 $\gcd$ 的值化为 $1$ 后能转化成欧拉函数的形式。</p>
+<p>$$<br>\large\therefore n&#x3D;\sum_{d|n}{\varphi(\frac{n}{d})}<br>$$</p>
+<p>$$<br>\large\therefore n&#x3D;\sum_{d|n}{\varphi(d)}<br>$$</p>
+<p>这里是因为每个 $\frac{n}{d}$ 和 $d$ 是对应的，所以能如此转化。</p>
+<h2 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h2><ul>
+<li>多组数据，每组数据给出一个数 $n$ ，求 $\sum_{i&#x3D;1}^{n}{\gcd(i,n)}$ 。</li>
+</ul>
+<p>利用欧拉反演，改变题目公式如下：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}{\sum_{d|\gcd(i,n)}{\varphi(d)}}<br>$$</p>
+<p>拆开 $\gcd$ 得：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}{\sum_{d|i,d|n}{\varphi(d)}}<br>$$</p>
+<p>改变循环顺序得：</p>
+<p>$$<br>\sum_{d|n}\varphi(d)\sum_{i&#x3D;1}^{n}[d|i]<br>$$</p>
+<p>化简得：</p>
+<p>$$<br>\sum_{d|n}\varphi(d)\frac{n}{d}<br>$$</p>
+<p>关于推导式子就没了。这时只需将 $\text{phi}$ 预处理，每次询问 $\sqrt{n}$ 复杂度。</p>
+<ul>
+<li>CF1900D Small GCD</li>
+</ul>
+<p>先排序，可得以下原公式：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{i-1}\gcd(a_i,a_j)(n-i)<br>$$</p>
+<p>带入欧拉反演如下：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{i-1}(\sum_{d|\gcd(a_i,a_j)}{\varphi(d)})(n-i)<br>$$</p>
+<p>化简：</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}(n-i)\sum_{j&#x3D;1}^{i-1}\sum_{d|a_i,d|a_j}{\varphi(d)}<br>$$</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}(n-i)\sum_{d|a_i}\varphi(d)\sum_{j&#x3D;1}^{i-1}[d|a_j]<br>$$</p>
+<p>$$<br>\sum_{i&#x3D;1}^{n}(n-i)\sum_{d|a_i}\varphi(d)\cdot cnt_{d}<br>$$</p>
+<p>其中我们可以边枚举 $i$ 边处理 $cnt_d$ ，并预处理 $\varphi(x)$ 。因此总时间复杂度为 $O(M+TN\sqrt{M})$ ，$M$ 表示 $a_i$ 的值域，还会有一些小常数，会有点卡常。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-17T16:00:00.000Z" title="11/18/2023, 12:00:00 AM">2023-11-18</time>发表</span><span class="level-item"><time dateTime="2024-01-09T08:26:52.882Z" title="1/9/2024, 4:26:52 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a><span> / </span><a class="link-muted" href="/categories/%E9%9A%8F%E7%AC%94/%E4%BC%98%E5%8C%96/">优化</a></span><span class="level-item">4 分钟读完 (大约626个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/18/%E5%9B%9B%E8%BE%B9%E5%BD%A2%E4%B8%8D%E7%AD%89%E5%BC%8F%E4%BC%98%E5%8C%96DP%E7%9A%84%E8%AF%81%E6%98%8E/">四边形不等式优化DP的证明</a></p><div class="content"><h2 id="〇-前置知识"><a href="#〇-前置知识" class="headerlink" title="〇. 前置知识"></a>〇. 前置知识</h2><ul>
+<li><p><strong>四边形不等式（几何意义上）</strong></p>
+<p>对于任意一个凸四边形（如图1），四个顶点分别为 $A,B,C,D$ ，其对角线交于点 $O$ ，则有 $AD+BC&gt;AB+CD$ 以及 $AD+BC&gt;AC+BD$ .</p>
+<p><strong>证明</strong>：</p>
+<p>$\because AO+BO&gt;AB\text{ and }CO+DO&gt;CD$ （三角形两边长之和大于第三边）</p>
+<p>$\therefore (AO+DO)+(BO+CO)&gt;AB+CD$ （联立两不等式）</p>
+<p>$\therefore AD+BC&gt;AB+CD$</p>
+<p>（同理可得 $AD+BC&gt;AC+BD$）</p>
+</li>
+<li><p><strong>四边形不等式（DP意义上）</strong></p>
+<p>这边主要都是些定义，因此不会有什么 <strong>针对定义的证明</strong> 。</p>
+<ul>
+<li><p>定义1</p>
+<blockquote>
+<p>设 $w$ 是定义在整数集合上的二元函数，对于任意整数 $i \leq i’ \leq j \leq j’$ ，若有 $w(i,j)+w(i’,j’) \leq w(i,j’)+w(i’,j)$ ，则称 $w$ 满足四边形不等式.[^1]</p>
+</blockquote>
+<p>什么叫做定义在“整数集合上的二元函数”？就是 $w$ 函数有两个参数，它的值和参数均为整数.</p>
+<p>但是，这似乎跟四边形没有半点关系吧.我们不如形象一点，对于刚才的定义，我们将 $i,i’,j,j’$ 表示在一个不太严谨的数轴上，这个数轴上 $a,b$ 两点的距离是 $w(a,b)$，然后，将中间的两个点，也就是 $i’$ 和 $j$ 向上抬升一点（如图2），这个四边形（在 $i’&#x3D;j$ 的情况下是三角形）就出来了.</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/3gv8lt8y.png"></p>
+</li>
+<li><p>定义2</p>
+<p>这是 定义1 的特殊情况。</p>
+<blockquote>
+<p>对于任意整数 $i &lt; i+1 \leq j &lt; j+1$ ，若有 $w(i,j)+w(i+1,j+1) \leq w(i,j+1)+w(i+1,j)$ ，则称 $w$ 满足四边形不等式.[^1]</p>
+</blockquote>
+<p>没啥好说的。。。</p>
+</li>
+<li><p>单调性</p>
+<blockquote>
+<p>设 $w$ 是定义在整数集合上的二元函数，对于任意整数 $i \leq i’ \leq j \leq j’$ ，若有 $w(i,j’) \geq w(i’,j)$ ，则称 $w$ 具有单调性.[^1]</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="一-证明四边形不等式定理"><a href="#一-证明四边形不等式定理" class="headerlink" title="一. 证明四边形不等式定理"></a>一. 证明四边形不等式定理</h2><ul>
+<li><p>四边形不等式定理</p>
+<p>如果 $w(i,j)$ 满足四边形不等式和单调性，则使用动态规划计算 $f$ 数组的时间复杂度为 $\Theta(n^2)$ .</p>
+<ul>
+<li>引理1</li>
+</ul>
+</li>
+<li><p>1</p>
+</li>
+</ul>
+<h2 id="二-引用"><a href="#二-引用" class="headerlink" title="二. 引用"></a>二. 引用</h2><p>[^1]: 参考 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/luoyj/p/12587356.html">罗勇军的博客——算法竞赛专题解析（10）：DP优化(1)–四边形不等式</a></p>
+<p>[^2]:<a target="_blank" rel="noopener" href="https://cse.hkust.edu.hk/mjg_lib/bibs/DPSu/DPSu.Files/p429-yao.pdf">F. Frances Yao原论文</a></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-10-24T16:00:00.000Z" title="10/25/2023, 12:00:00 AM">2023-10-25</time>发表</span><span class="level-item"><time dateTime="2024-01-09T07:32:59.820Z" title="1/9/2024, 3:32:59 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%B8%B8%E8%AE%B0/">游记</a></span><span class="level-item">7 分钟读完 (大约1011个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/10/25/CSP-JS2%E6%B8%B8%E8%AE%B0/">CSP-J/S2 游记</a></p><div class="content"><ul>
+<li>$\text{I don’t know this person is 2B or not 2B.}$</li>
+</ul>
+<h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day $-1$"></a>Day $-1$</h2><p>回想起了初赛S组的难度以及一个卡分数线过的我。我感觉第二天的考试要炸，思前想后感觉这种时候可能也做不了什么知识性的事了，于是就把文件快读的模板背了一下（虽然不知道明天是否有用）。无论如何，这天奇迹般地睡了个好觉。</p>
+<h2 id="Day-0"><a href="#Day-0" class="headerlink" title="Day $0$"></a>Day $0$</h2><p><del>Backroom</del></p>
+<h2 id="Day-1-frac-1-3"><a href="#Day-1-frac-1-3" class="headerlink" title="Day $1\frac{1}{3}$"></a>Day $1\frac{1}{3}$</h2><h4 id="8-30"><a href="#8-30" class="headerlink" title="$8:30$"></a>$8:30$</h4><p>上J组考场，VS Code能正常用！J组的AB两道题都比较简单——新时代的大水题！其中 $\text{T1}$ ，一开始看的时候没什么思路，盯着电脑想了十几分钟，还是决定从部分分拿起，打完第一问后一分多钟第二问就出来了，$\text{T1}$ 就拿下了。打完后测过大样例觉得有点后怕，还是把文件快读加上了。然后开 $\text{T2}$ ，看到标题一瞬间想到之前做过的一道题（尽管题面并不一样），看完题面后想到了贪心并且觉得应该一段一段的考虑，略加调试，就通过了样例。之后有一段时间对着大样例调试，发现之前没用完的油要接着考虑，再次修改代码，结束 $\text{T2}$。</p>
+<p>$\text{T1}+\text{T2}&#x3D;70\text{min}$</p>
+<h4 id="9-3-sqrt-5-2"><a href="#9-3-sqrt-5-2" class="headerlink" title="$9:(3\sqrt{5})^2$"></a>$9:(3\sqrt{5})^2$</h4><p>发现 $\text{T3}$ 是一道大模拟，然后飞快看了眼 $\text{T4}$ 并断定不会，于是就老老实实打 $\text{T3}$ 了。$\text{T3}$ 是我唯一一道打了表的题，这是我在正式考试中头一次使用打素数表这种<del>不光彩的</del>方法，打起来感觉比之前我所写过的大模拟舒服得多，大样例也给得毫不吝啬，帮助我发现了许多bug，例如最大的解为 $0$ 的情况。总之，最后通过了大样例，$\text{T3}$ 宣告结束了！</p>
+<blockquote>
+<p>这里是考后视角，虽然目前没有发现任何bug，但是小*灵和*斗都只拿到了 $80$ 分，$\text{I don’t know Y}$ ，唯有洛谷给出了 $100$ 分的佳绩，希望得到洛谷的hack数据，希望CCF的样例和洛谷一样水！！！</p>
+</blockquote>
+<p>然后就去打 $\text{T4}$ ，想了想有了正解的思路，最后打了个 $\text{dfs}$ ，思路是在深搜过程中记录要求最严苛的点，最后加到 $ans$ 里面一起统计答案去。</p>
+<blockquote>
+<p>在洛谷上取得了 $35$ 分的好成绩，在小*灵上取得了 $15$ 分的成绩，再次衷心祝愿CCF数据出水点！然而，考后我把深搜改成了广搜，并且把记录内容从最严苛的点变成了最晚出发时间，然后 $35\rightarrow 90$ （真的想吐）。最关键的是，但凡我是一个正常人，我看完这道题后就应该记录最直接的数据二分这种垃圾玩意！虽然正解是二分+同余最短路，但是以我对CCF的最后一丝幻想，我觉得CCF不会在普及组出这么恶心的东西，而且，二分起始时间的思路似乎已经被同机房的大佬hack了<del>，因此我厚颜无耻地认为<strong>“我的思路是正解”</strong>。</del></p>
+</blockquote>
+<h1 id="Day-1-frac-7-12"><a href="#Day-1-frac-7-12" class="headerlink" title="Day $1\frac{7}{12}$"></a>Day $1\frac{7}{12}$</h1><h4 id="14-00"><a href="#14-00" class="headerlink" title="$14:00$"></a>$14:00$</h4><p>打提高组，然后寄了。</p>
+<p>除了 $\text{T1}$ 以外其他题都大寄特寄！</p>
+<p>整个过程没什么好说的，$\text{T1}$ 打完（$1\text{hour}$）之后的所有时间都去打 $\text{T2}$ 去了，然后 $\text{T2}$ 只打了个区间DP，比赛就结束了。</p>
+<blockquote>
+<p>考后震惊地发现 $\text{T3}$ 打太急了甚至没有编译，导致编译错误，但是我会自我安慰——即使没有CE也会爆零。我谢罪！</p>
+</blockquote>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-07-19T16:00:00.000Z" title="7/20/2023, 12:00:00 AM">2023-07-20</time>发表</span><span class="level-item"><time dateTime="2024-01-09T08:24:52.747Z" title="1/9/2024, 4:24:52 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></span><span class="level-item">4 分钟读完 (大约604个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/07/20/%E9%A2%98%E8%A7%A3%EF%BC%9ASending%20a%20Sequence%20Over%20the%20Network/">题解：Sending a Sequence Over the Network</a></p><div class="content"><p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/aacbe/post-ti-jie-cf1741e">更好的阅读体验</a></strong></p>
+<p>本蒟蒻的第一篇题解。</p>
+<p>这道题我看大家都是用一维 DP 做的，本蒟蒻今天在考场上写了种二维 DP 的做法。我个人认为这种可能理解起来会简单一些（虽说写起来麻烦了点），于是就有了这篇题解。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>当时（考场上）想了半天没想出来怎么使用一维 DP 解决这道题，便想了一种二维 DP 的做法。</p>
+<p>我们定义 $f[0][i]$ 表示以 $i$ 作为一段的头部时是否可行，$f[1][i]$ 表示以 $i$ 作为一段的结尾是否可行。并且在原序列中添加两个点：$0$ 和 $n+1$。</p>
+<p>状态转移（以下 $i$ 均指当前考虑的位置）：</p>
+<ul>
+<li>头的转移</li>
+</ul>
+<ol>
+<li>如果上一个位置可以作为尾，那么这个位置就可以作为头。<br>也就是 $f[0][i] &#x3D; f[1][i-1]$    </li>
+<li>如果当前位置作为头，那么下一段的头的位置也可以作为头。<br>也就是 $f[0][i+a[i]+1] &#x3D; f[0][i]$</li>
+</ol>
+<ul>
+<li>尾的转移</li>
+</ul>
+<ol>
+<li>如果上一段的尾的位置可以做尾，则当前位置可以做尾。<br>也就是 $f[1][i] &#x3D; f[1][i-a[i]-1]$  </li>
+<li>如果这一段的头的位置可以做头，那么当前位置也可以做尾。<br>也就是 $f[1][i]&#x3D;f[0][i-a[i]]$</li>
+</ol>
+<p><strong>注意</strong>：写代码的时候要注意下标不能越界。</p>
+<p>根据以上的转移（可能有点乱），我们能知道初始状态为：<br>$$<br>f[1][0] &#x3D; f[0][1] &#x3D; 1<br>$$</p>
+<p>而最后我们只需要判断第 $n$ 个位置能否做尾或第 $n+1$ 个位置能否做头就好。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>（供群众批判）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> a[<span class="number">200010</span>];</span><br><span class="line"><span class="type">bool</span> f[<span class="number">2</span>][<span class="number">200010</span>];</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  0: 作为头</span></span><br><span class="line"><span class="comment">  1: 作为尾</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		cin &gt;&gt; n;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) cin &gt;&gt; a[i];</span><br><span class="line">		<span class="built_in">memset</span>(f, <span class="number">0</span>, <span class="keyword">sizeof</span> f); <span class="comment">// 多测不清空，爆零两行泪</span></span><br><span class="line">		f[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">		f[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">			<span class="comment">// i作为头</span></span><br><span class="line">			<span class="comment">// 从上一个是尾转移</span></span><br><span class="line">			f[<span class="number">0</span>][i] |= f[<span class="number">1</span>][i<span class="number">-1</span>];</span><br><span class="line">			<span class="comment">// 隐藏情况：之前有人帮它更新了</span></span><br><span class="line">			<span class="comment">// 更新下一个可能作为头的</span></span><br><span class="line">			<span class="keyword">if</span> (f[<span class="number">0</span>][i] &amp;&amp; i+a[i]+<span class="number">1</span> &lt;= n+<span class="number">1</span>) f[<span class="number">0</span>][i+a[i]+<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">			<span class="comment">// i作为尾</span></span><br><span class="line">			<span class="keyword">if</span> (i-a[i]<span class="number">-1</span> &gt;= <span class="number">0</span>) f[<span class="number">1</span>][i] |= f[<span class="number">1</span>][i-a[i]<span class="number">-1</span>];</span><br><span class="line">			<span class="keyword">if</span> (i-a[i] &gt;= <span class="number">0</span>) f[<span class="number">1</span>][i] |= f[<span class="number">0</span>][i-a[i]];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (f[<span class="number">1</span>][n] || f[<span class="number">0</span>][n+<span class="number">1</span>]) cout &lt;&lt; <span class="string">&quot;Yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;No&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-07-18T16:00:00.000Z" title="7/19/2023, 12:00:00 AM">2023-07-19</time>发表</span><span class="level-item"><time dateTime="2024-01-09T08:10:35.868Z" title="1/9/2024, 4:10:35 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a><span> / </span><a class="link-muted" href="/categories/%E9%9A%8F%E7%AC%94/%E6%8A%80%E5%B7%A7/">技巧</a></span><span class="level-item">9 分钟读完 (大约1389个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/07/19/%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/">技巧合集</a></p><div class="content"><h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><p>首先，Lambda读作 [‘læmdə]。  </p>
+<p>好，接下来我们步入正题。就我个人认为，Lambda表达式是一种能让一些不会经常调用的 <strong>简单函数</strong> 写得更简单的方法，其中最典型的例子就是<code>sort</code>自定义排序函数。<br>假设我们有一个结构体<code>node</code>如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">&#125;points[<span class="number">114514</span>];</span><br></pre></td></tr></table></figure>
+<p>一般来说，我们会写一个<code>cmp</code>函数如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(node &amp;a, node &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a.x == b.x) <span class="keyword">return</span> a.y &lt; b.y;</span><br><span class="line">	<span class="keyword">return</span> a.x &lt; b.x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者更高级一点，使用<code>operator</code>重载运算符：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x, y;</span><br><span class="line">	<span class="type">const</span> <span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> node &amp;b) <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (x == b.x) <span class="keyword">return</span> y &lt; b.y;</span><br><span class="line">		<span class="keyword">return</span> x &lt; b.x;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;points[<span class="number">114514</span>];</span><br></pre></td></tr></table></figure>
+<p>但是，这些写法都是需要额外再开一个函数的，并且对于先按某规则排序再按另一种规则排序这种情况的处理并不好（第二种写法甚至不能在这种情况下使用）。于是我们需要一种更简单的方法来写排序函数——Lambda表达式。先看效果，它写出来大概长这样：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(points+<span class="number">1</span>, points+n+<span class="number">1</span>, [](node a, node b) -&gt; <span class="type">bool</span> &#123; <span class="built_in">return</span> (a.x==b.x?a.y&lt;b.y:a.x&lt;b.x); &#125;);</span><br></pre></td></tr></table></figure>
+<p>* 还能再简单点吗？<br>* 可以，那么就是这样：（下面代码中的<code>-&gt; bool</code>被省略了）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(points+<span class="number">1</span>, points+n+<span class="number">1</span>, [](node a, node b) &#123; <span class="built_in">return</span> (a.x==b.x?a.y&lt;b.y:a.x&lt;b.x); &#125;);</span><br></pre></td></tr></table></figure>
+<p>这只是其中一种使用方法。借此，我们还可以把局部变量当做“全局”变量来用（并不是真的全局，但是在Lambda表达式的函数内可以使用这些局部变量），具体实现方法是 <strong>捕获</strong> （这东西我还没想到在OI中的应用），也就是在那个<code>[]</code>内部做文章，实现可以参考参考资料。  </p>
+<p><strong>upd 20231130</strong></p>
+<p>除此之外，Lambda表达式还可以在函数内部定义函数，例如，我们可以在 <code>main</code> 函数里定义一个 <code>add</code> 函数用来给链式前向星加边：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    <span class="type">int</span> nxt, to;</span><br><span class="line">&#125;g[<span class="number">200010</span>];</span><br><span class="line"><span class="type">int</span> head[<span class="number">200010</span>], tot;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    function&lt;<span class="type">void</span>(<span class="type">int</span>, <span class="type">int</span>)&gt; add = [](<span class="type">int</span> u, <span class="type">int</span> v)&#123;</span><br><span class="line">        g[++tot] = &#123;head[u], v&#125;;</span><br><span class="line">        head[u] = tot;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">add</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而这个函数也是受“变量”的定义域所影响的，例如下面在 <code>test</code> 函数中调用 <code>add()</code> 函数将出现 $\text{CE}$ ：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    <span class="type">int</span> nxt, to;</span><br><span class="line">&#125;g[<span class="number">200010</span>];</span><br><span class="line"><span class="type">int</span> head[<span class="number">200010</span>], tot;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">add</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    function&lt;<span class="type">void</span>(<span class="type">int</span>, <span class="type">int</span>)&gt; add = [](<span class="type">int</span> u, <span class="type">int</span> v)&#123;</span><br><span class="line">        g[++tot] = &#123;head[u], v&#125;;</span><br><span class="line">        head[u] = tot;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">test</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>不仅如此，我们甚至可以在这基础上写递归（以 <code>Tarjan</code> 为例）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    <span class="type">int</span> nxt, to;</span><br><span class="line">&#125;g[<span class="number">200010</span>];</span><br><span class="line"><span class="type">int</span> head[<span class="number">200010</span>], tot;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dfn[<span class="number">200010</span>], low[<span class="number">200010</span>], cnt;</span><br><span class="line"><span class="type">int</span> st[<span class="number">200010</span>], top;</span><br><span class="line"><span class="type">bool</span> inst[<span class="number">200010</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> scc[<span class="number">200010</span>], sc;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    function&lt;<span class="type">void</span>(<span class="type">int</span>)&gt; tarjan = [&amp;tarjan](<span class="type">int</span> u) &#123;</span><br><span class="line">        dfn[u] = low[u] = ++cnt;</span><br><span class="line">        st[++top] = u, inst[u] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = head[u]; i; i = g[i].nxt) &#123;</span><br><span class="line">            <span class="type">int</span> v = g[i].to;</span><br><span class="line">            <span class="keyword">if</span> (!dfn[v]) &#123;</span><br><span class="line">                <span class="built_in">tarjan</span>(v);</span><br><span class="line">                low[u] = <span class="built_in">min</span>(low[u], low[v]);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (inst[v]) &#123;</span><br><span class="line">                low[u] = <span class="built_in">min</span>(low[u], dfn[v]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (dfn[u] == low[u]) &#123;</span><br><span class="line">            sc++;</span><br><span class="line">            <span class="keyword">while</span> (st[top] != u) &#123;</span><br><span class="line">                scc[st[top]] = sc;</span><br><span class="line">                inst[st[top]] = <span class="number">0</span>;</span><br><span class="line">                top--;</span><br><span class="line">            &#125;</span><br><span class="line">            scc[st[top]] = sc;</span><br><span class="line">            inst[st[top]] = <span class="number">0</span>;</span><br><span class="line">            top--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其主要就是一个 <code>function</code> 的实现，语法是 <code>function&lt;返回值类型(参数类型1, 参数类型2, ...)&gt; = [捕获](传参)&#123;函数主体&#125;</code> ，而要递归就只用在捕获处引用这个函数（就像上面的例子）。</p>
+<h2 id="auto-C-11新语法"><a href="#auto-C-11新语法" class="headerlink" title="auto (C++11新语法)"></a>auto (C++11新语法)</h2><p>先说怎么启用C++11或其他新版本，对于Dev-C++，在编译选项中的“在编译时添加这些参数”添加<code>-std=c++11</code>，这里的 <code>11</code> 可以换为其他版本如：<code>-std=c++23</code>。<br><code>auto</code> 可以自动匹配变量类型，但是没多大用（除非使用迭代器<code>iterator</code>这种难写的类型），具体而言可以这么写：  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> i = <span class="number">1ll</span>;</span><br><span class="line"><span class="keyword">auto</span> j = mp.<span class="built_in">begin</span>();  <span class="comment">// mp是一个map&lt;int, int&gt;</span></span><br></pre></td></tr></table></figure>
+<p>(值得一提的是，使用迭代器遍历<code>map</code>遍历出来的是<code>pair</code>类型的东西)<br>并且，<code>auto</code>还有一些可以减少代码量的用法，例如遍历<code>vector</code>:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (<span class="type">int</span>)vec.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">	cout &lt;&lt; vec[i] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i : vec) &#123;</span><br><span class="line">	cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同理，其他能使用迭代器的容器都可以如此遍历（但是，栈和队列都不行）。</p>
+<h2 id="using"><a href="#using" class="headerlink" title="using"></a>using</h2><p>这个语法很简单，应用只有一个——<code>using ll = long long</code> 。<br>它能定义 <code>ll</code> 为 <code>long long</code> 并且还不能批量替换 <code>int</code> 。<br>如果要把代码中所有 <code>int</code> 替换为 <code>long long</code>，请使用 <code>#define int long long</code> （虽然这是未定义行为）.  </p>
+<h2 id="模块化思想-与-类和对象"><a href="#模块化思想-与-类和对象" class="headerlink" title="模块化思想 与 类和对象"></a>模块化思想 与 类和对象</h2><p>将代码中实现不同功能的代码封装成函数，这会对 <code>debug</code> 有极大的帮助。<br>对象嘛，不是你想的那个对象，你可以使用 <code>namespace</code> 或 <code>class</code>。<br>给个例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> work1&#123;</span><br><span class="line">	<span class="function">string <span class="title">main</span><span class="params">(string t)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> t+t+<span class="string">&quot;adwe&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(string t)</span> </span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="built_in">main</span>(t) &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">work2</span>&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="function">string <span class="title">main</span><span class="params">(string t)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> t+t+<span class="string">&quot;adwe&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(string t)</span> </span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="built_in">main</span>(t) &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 使用namespace的方法</span></span><br><span class="line">	work1::<span class="built_in">print</span>(<span class="string">&quot;1abc&quot;</span>);</span><br><span class="line">	cout &lt;&lt; work1::<span class="built_in">main</span>(<span class="string">&quot;2abc&quot;</span>) &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// 使用class的方法</span></span><br><span class="line">	work2 *p = <span class="keyword">new</span> work2;  <span class="comment">// 新建一个类</span></span><br><span class="line">	p-&gt;<span class="built_in">print</span>(<span class="string">&quot;3abc&quot;</span>);</span><br><span class="line">	p-&gt;<span class="built_in">main</span>(<span class="string">&quot;4abc&quot;</span>);  <span class="comment">// 无法编译</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="调试常用"><a href="#调试常用" class="headerlink" title="调试常用"></a>调试常用</h2><h3 id="离线比赛常用：cerr"><a href="#离线比赛常用：cerr" class="headerlink" title="离线比赛常用：cerr"></a>离线比赛常用：cerr</h3><p>因为离线比赛中需要进行文件输入输出，但是每次开关文件很麻烦，而 <code>cerr</code> 可以不受文件输入输出流影响，往标准输入输出流里进行输出，但代价是每次输出都会清理一遍缓冲区，时间消耗极大，所以调试完后一定一定要把所有 <code>cerr</code> 语句删除。</p>
+<h3 id="啥都能用的-assert"><a href="#啥都能用的-assert" class="headerlink" title="啥都能用的 assert"></a>啥都能用的 assert</h3><p>位于头文件 <code>cassert</code> 中，如果不用万能头要把头文件导入。</p>
+<p>在代码中可以写 <code>assert(a &lt;= n &amp;&amp; 1 &lt;= a);</code> 来判断 <code>a</code> 是否在给定的范围内，如果不在程序将立即终止运行并输出错误所在的行号等信息，准确来说，只要 <code>assert</code> 语句中的表达式的值为 <code>false</code> ，就会返回报错。</p>
+<p>可以使用宏 <code>#define NDEBUG</code> 即可一次性禁用所有 <code>assert</code> 语句。</p>
+<p>值得注意的是，在洛谷中，如果 <code>assert</code> 返回报错会显示 RE ，并返回错误信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Runtime Error.</span><br><span class="line">Received signal 6: Aborted / IOT trap.</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><h3 id="Lambda表达式-1"><a href="#Lambda表达式-1" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/language/lambda">官方文档</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/384314474">zhihu</a></li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-07-18T16:00:00.000Z" title="7/19/2023, 12:00:00 AM">2023-07-19</time>发表</span><span class="level-item"><time dateTime="2024-01-09T08:07:53.085Z" title="1/9/2024, 4:07:53 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">学习总结</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E6%95%B0%E5%AD%A6/">数学</a></span><span class="level-item">6 分钟读完 (大约901个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/07/19/%E7%BB%84%E5%90%88%E6%95%B0%E4%B8%8E%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/">组合数与乘法逆元</a></p><div class="content"><h1 id="组合数"><a href="#组合数" class="headerlink" title="组合数"></a>组合数</h1><p>众所周知，组合数有两种求法。</p>
+<ul>
+<li>杨辉三角求法：$\dbinom{i}{j}&#x3D;\dbinom{i-1}{j}+\dbinom{i-1}{j-1}$  </li>
+<li>定义法：$\dbinom{i}{j}&#x3D;\Large\frac{n!}{m!(n-m)!}$</li>
+</ul>
+<p>其中，杨辉三角的空间占用很大，所以除非数据量较小（如：$N\leqslant 10^{4}$）的情况，我们不会使用这种求法，但是这种求法可以实现 $O(1)$ 查询，因此它也适用于需要大量查询的题目。而定义法适用于不需要大量查询（至少没有杨辉三角的情况多）的题目，但是因为有阶乘的存在，使得实现 $O(1)$ 还需要一点点数学上的优化，并且，其适用的数据范围（$N\leqslant 10^5$）一般都需要 $\text{mod}$ 一个极大数（阶乘不 $\text{mod}$ 留着爆 $\text{long long}$ 吗），然而我们都知道，同余的性质不适用于除法，这导致我们处于一个进退两难的地步。<br>古语有云：$\text{To modulo or not to do, it’s a question.}$<br>这时候，我们就需要乘法逆元来帮忙了。</p>
+<h1 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h1><p>按照惯例，先说定义：如果一个线性同余方程 $ax\equiv 1(\mathrm{mod}\;b)$ ，则称 $x$ 为 $a\;\mathrm{mod}\;b$ 的逆元，记为 $a^{-1}$ 。我们可以把它理解成倒数，一种在模 $p$ 意义下的倒数。因此，我们可以知道一个数逆元的逆元就是这个数本身。<br>逆元的求法有两种：  </p>
+<h3 id="Extend-GCD-拓展欧几里得法"><a href="#Extend-GCD-拓展欧几里得法" class="headerlink" title="Extend-GCD 拓展欧几里得法"></a><code>Extend-GCD</code> 拓展欧几里得法</h3><p>就是直接解上述定义中的方程，没什么好说的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">exgcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> &amp;x, <span class="type">int</span> &amp;y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">		x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">exgcd</span>(b, a%b, x, y);</span><br><span class="line">	y -= a/b*x;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="快速幂法"><a href="#快速幂法" class="headerlink" title="快速幂法"></a>快速幂法</h3><p>$\huge 使用这玩意的前提是\;b\;为质数！$</p>
+<p>证明：  </p>
+<blockquote>
+<p>$\because ax\equiv 1(\mathrm{mod}\;b)$<br>由费马小定理: $a^{p-1}\equiv1(\mathrm{mod}\;b)$<br>得 $ax\equiv a^{p-1}(\mathrm{mod}\;b)$<br>$\therefore x\equiv a^{p-2}(\mathrm{mod}\;b)$</p>
+</blockquote>
+<p>所以我们可以直接写一个快速幂板板！</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">power</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">	b -= <span class="number">2</span>;</span><br><span class="line">	<span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (b) &#123;</span><br><span class="line">		<span class="keyword">if</span> (b&amp;<span class="number">1</span>) ans = ans*a%p;</span><br><span class="line">		a = a*a%p;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除此之外，我们还可以使用线性递推求一大串数的逆元（但是我不会推）。  </p>
+<p>$i^{-1}\equiv\begin{cases}1&amp;\mathrm{if}\;i&#x3D;1\-\left\lfloor\dfrac{p}{i}\right\rfloor (p\;\mathrm{mod}\;i)^{-1}&amp;\mathrm{otherwise.}\end{cases}\;(\mathrm{mod}\;p)$  </p>
+<p>那么，归根结底，我们到底如何使用乘法逆元加速定义法的组合数呢？</p>
+<h1 id="乘法逆元优化组合数"><a href="#乘法逆元优化组合数" class="headerlink" title="乘法逆元优化组合数"></a>乘法逆元优化组合数</h1><p>我们不能使用定义法求带模组合数是因为除法不具备同余的性质，但是，我们可以用逆元将除法转化为乘法，进而求出组合数。<br>那么，原来的定义法公式可以转化为 $\dbinom{i}{j}&#x3D;\large n!\times inv[m] \times inv[n-m]$（还是说可以把逆元理解为倒数）<br>首先，$n!$ 是可以预处理出来的，而 $inv[i]$ 使用上面说的两种方式很明显会 $TLE$ (但事实上并不会) ，剩下的只有一条路了——递推。<br>首先，我们还是可以使用上面说到的递推公式，但是对于阶乘，我们还有另一个递推公式：<br>$$inv[i!]&#x3D;inv[(i+1)!]\times (i+1)$$<br>怎么理解呢？还记得我们说过，逆元就是一种倒数吗？借此，有如下公式：<br>$$ \frac{1}{i!}&#x3D;\frac{1}{(i+1)!}\times (i+1) $$<br>答案已经呼之欲出了！</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-07-17T16:00:00.000Z" title="7/18/2023, 12:00:00 AM">2023-07-18</time>发表</span><span class="level-item"><time dateTime="2024-01-09T08:16:38.100Z" title="1/9/2024, 4:16:38 PM">2024-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">学习总结</a><span> / </span><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a></span><span class="level-item">11 分钟读完 (大约1638个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/07/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a></p><div class="content"><p><strong>动态规划（Dynamic programming）是一种神奇的喵。</strong></p>
+<h2 id="动态规划的基本性质以及几个重要概念"><a href="#动态规划的基本性质以及几个重要概念" class="headerlink" title="动态规划的基本性质以及几个重要概念"></a>动态规划的基本性质以及几个重要概念</h2><blockquote>
+<p>忘记过去的人，必定要重蹈覆辙。   ——乔治·桑塔亚纳</p>
+</blockquote>
+<h3 id="几个性质"><a href="#几个性质" class="headerlink" title="几个性质"></a>几个性质</h3><ul>
+<li><p>最优子结构<br>这个特性也会在贪心算法中出现。</p>
+</li>
+<li><p>无后效性<br>已经求解的子问题，不会再受到后续决策的影响。</p>
+</li>
+<li><p>子问题重叠<br>见上文引用。</p>
+</li>
+</ul>
+<h3 id="几个重要概念"><a href="#几个重要概念" class="headerlink" title="几个重要概念"></a>几个重要概念</h3><ul>
+<li><p>状态<br>即 <code>dp</code> 数组中每个位置的含义。</p>
+</li>
+<li><p>状态转移方程<br>单纯讨论 <code>dp</code> 数组中的状态的转移关系，这一步将会非常关键。</p>
+</li>
+<li><p>初始状态定义<br>也就是一开始的时候，哪些状态的值是可以直接确定的并且在状态的转移中无法被计算甚至会影响状态转移的。（我有很多次都是因为 <code>dp</code> 初始值导致来回调代码）</p>
+</li>
+</ul>
+<p>接下来我们会用一道题目来看一下这些定义是什么。</p>
+<h3 id="简单例题"><a href="#简单例题" class="headerlink" title="简单例题"></a>简单例题</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1216">IOI1994 数字三角形</a><br>简单来说，给定一个由数组成的三角形（即除第一层只有一个数外，每一层的数个数都比上一层多1），需要你求出从第一层到最后一层的所经过的最大的和。<br><img src="https://cdn.luogu.com.cn/upload/image_hosting/95pzs0ne.png" alt="图片"><br>例如这个三角形，从 $7→3→8→7→5$ 的路径产生了最大权值。</p>
+</blockquote>
+<p>这道题很简单，所以只在此处明确一下以上的概念。<br>下文中的 <code>dp</code> 数组未经优化，是二维数组，并且思路是从上往下进行计算。</p>
+<p>状态：<code>dp[i][j]</code> 表示从上往下走到第 <code>i</code> 行第 <code>j</code> 列所能得到的最大权值。</p>
+<p>状态转移方程：<code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-1]) + a[i][j]</code></p>
+<p>初始状态定义：<code>dp[1][1] = a[1][1]</code>（但其实定不定义无所谓的啦）</p>
+<p><strong>喵<del>你已经掌握了这些基本概念了，接下来我们会各种形态的DP进行深入剖析喵</del></strong></p>
+<h2 id="各种动态规划的形态"><a href="#各种动态规划的形态" class="headerlink" title="各种动态规划的形态"></a>各种动态规划的形态</h2><h3 id="线性DP"><a href="#线性DP" class="headerlink" title="线性DP"></a>线性DP</h3><p>这一种DP构造最简单，代表性问题是LIS(最长上升子序列)和LCS(最长公共子序列)。(因为连续序列太简单，所以不在此处讨论)</p>
+<h4 id="最长公共子序列-LCS"><a href="#最长公共子序列-LCS" class="headerlink" title="最长公共子序列(LCS)"></a>最长公共子序列(LCS)</h4><p>我们定义 <code>f[i][j]</code> 为第一个数组 <code>i</code> 之前与第二个数组 <code>j</code> 之前的数能构成的最长公共子序列的长度。于是，稍加推导，可以得出状态转移方程：</p>
+<p>$f_{i,j}&#x3D;\begin{cases}f_{i-1,j-1}+1&amp;\mathrm{if}\;s[i]&#x3D;t[j]\\max(f_{i-1,j},f_{i,j-1})&amp;\mathrm{otherwise.}\end{cases}$</p>
+<p>（这应该看得懂吧。。。）</p>
+<p>接下来考虑初始状态，很明显，根本不需要定义初始状态。</p>
+<p>接下来就是考验码力的时候了<del>（好像也不怎么考验？</del></p>
+<p>P.S. 如何提升码力？多做模拟题，尤其是大模拟，成为码力小王子！<del>（我都没做</del></p>
+<p>* So, end?</p>
+<p>* Yeah, it’s easy. Isn’t it?</p>
+<h4 id="最长上升子序列-LIS"><a href="#最长上升子序列-LIS" class="headerlink" title="最长上升子序列(LIS)"></a>最长上升子序列(LIS)</h4><p><strong>请注意</strong>，LIS题目中还有很多类型的，例如求方案数或是判断一个数是否一定属于它所在的数组的LIS中。</p>
+<p>我们定义 <code>f[i]</code> 表示前 <code>i</code> 个元素的最长上升子序列的长度。更新时，使用前面的所有合法状态来更新当前状态，容易写出转移方程：</p>
+<p>$ f_{i}&#x3D;\mathrm{max}(f_{j}\;|\;j&lt;i\;\mathrm{and}\;A_j&lt;A_i) $</p>
+<p>这种方法的时间复杂度是 $O(n^2)$ ，并且我们还有第二种方法，它的时间复杂度是 $O(n\log n)$ 的。</p>
+<p>首先我们定义一个数组 $d$ ，表示最长上升子序列，$len$ 为这个最长上升子序列的长度，所以 $d_{len}$ 就是这个最长上升子序列的最后一个元素。</p>
+<p>我们初始化状态：$d_1&#x3D;a_1, len&#x3D;1$</p>
+<p>接下来我们枚举 $i$ 从 $2$ 到 $n$ 每次更新 $d$ 数组。考虑接下来添加一个元素 $a_i$：</p>
+<ul>
+<li><p>如果这个元素 $a_i \geq d_{len}$ ，就直接向最后添加一个元素。</p>
+</li>
+<li><p>否则我们在数组 $d$ 中找到第一个大于 $a_i$ 的元素与 $a_i$ 作替换。</p>
+</li>
+</ul>
+<p>完成！</p>
+<h3 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h3><p>事实上在这个子问题下还有很多类问题，但是这类问题很简单，也肯定有人比我写得好，就不在此处说明了。</p>
+<h3 id="记忆化搜索"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索</h3><p>很难说它属于DP，但是它的思想却是实打实的DP。我们可以把这个词分为两块来理解：记忆化+搜索。还记得 <strong>Part 1</strong> 引用的那句话吗，记忆化搜索就是为了防止搜索时出现重复状态增加运行时间而出现的。具体而言，它在搜索过程中记录了每一步得到的答案，而下次这个同样的情况被搜索到时，将不会继续搜索，而是会把之前记录的答案直接返回。</p>
+<p>这类问题有很多，包括后文中提到的 数位DP 的例题也是使用了记忆化搜索的。</p>
+<h4 id="解题步骤"><a href="#解题步骤" class="headerlink" title="解题步骤"></a>解题步骤</h4><ol>
+<li><p>先看这道题能不能用记忆化搜索（这要保证搜索时产生的状态并不多）。</p>
+</li>
+<li><p>如果可以，那么应该如何定义状态，需要记录的到底有什么（例如搜索时产生的步数信息就 <strong>一般</strong> 不用记录）。</p>
+</li>
+<li><p>我下次复用这个信息的时候要注意什么。</p>
+</li>
+</ol>
+<h3 id="区间DP"><a href="#区间DP" class="headerlink" title="区间DP"></a>区间DP</h3><p>这类题目算是 <strong>玩的挺花</strong> 的题，各种变形出其不意攻其不备，并且状态的定义会比其他类型的题目灵活许多，因此对于这些题，最好的方法不是记模型，而是理解这种思路。因此，这个板块我们需要结合例题来看。</p>
+<p><strong>最经典的区间DP例题——<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1775">石子合并（弱化版）</a></strong></p>
+<blockquote>
+<p>一条路上有许多堆石子，每堆石子都有一个质量参数，现在要将它们合并成一堆，每次合并的代价是这两堆石子的质量之和，需要求出合并成一堆的总代价的最小值。</p>
+</blockquote>
+<p>题意很简单，现在我们来考虑状态的定义：$f_{i,j}$ 表示合并第 $i$ 到第 $j$ 堆石子所花费的代价的最小值。</p>
+<p>接下来我们考虑转移：从 $i$ 到 $j$ 的石子可以把它分成两半来考虑，每次转移只需要增加两边的代价，也就是 $f_{i,j}&#x3D;\mathrm{min}(f_{i,k}+f_{k+1,j}\;|\;i \leq k\leq j-1)$ （注意这个 $-1$ 哈）</p>
+<p>那么，问题来了，$f$ 想要转移，前提是那些转移来的值是已经被处理过的，否则转了跟转了一样（sssss），所以，我们需要一种枚举方法，来保证转移的合法性。</p>
+<p>这里你可以参考 floyd 的转移方法（事实上有人说 floyd 也是DP），我们只需要先枚举区间长度，再枚举起点，最后用前两个信息推出区间终点，我们考虑一下为什么这么做可以满足上面的性质，因为我们每次转移来的两个区间的长度一定是比当前区间的长度短的，而我们的区间长度又是从小到大枚举，自然而然转移来的状态一定是已经处理过的了。</p>
+<p>另外，我们每次加的代价值，<strong>不能</strong> 再拿一个循环来枚举并累加代价，这里我们需要预处理一个前缀和以便我们在 $O(1)$ 的时间内的到代价值。</p>
+<p>最后是初始状态，$f$ 数组首先肯定要赋值成极大值（这里注意，不建议将其赋值成 <code>INT_MAX</code> 或 <code>LLONG_MAX</code> ，这样 $f$ 数组一加就直接爆 <code>int</code> 或 <code>long long</code>，虽然这道题可以这么赋值），然后对于对角线上的元素 $f_{i,i}$ 要赋值成 $0$ 。</p>
+<p>思考过程结束，代码如下。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, a[<span class="number">301</span>];</span><br><span class="line"><span class="type">int</span> dp[<span class="number">301</span>][<span class="number">301</span>];</span><br><span class="line"><span class="type">int</span> c[<span class="number">301</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            dp[i][j] = INT_MAX;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        dp[i][i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">        c[i] = c[i - <span class="number">1</span>] + a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> len = <span class="number">2</span>; len &lt;= n; len++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="type">int</span> j = i + len - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (j &lt;= n) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> k = i; k &lt; j; k++) &#123;</span><br><span class="line">                    dp[i][j] =</span><br><span class="line">                        <span class="built_in">min</span>(dp[i][j], dp[i][k] + dp[k + <span class="number">1</span>][j] + c[j] - c[i - <span class="number">1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; dp[<span class="number">1</span>][n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这道题事实上可以使用四边形不等式优化。但是我也忘了qwq。</p>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">上一页</a></div><div class="pagination-next"><a href="/page/3/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.jpg" alt="LynxCat"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">LynxCat</p><p class="is-size-6 is-block">互联网垃圾产生者</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>现居地球</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">21</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/lynxcatt" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/lynxcatt"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Mail" href="mailto:cheeseocelot@outlook.com"><i class="fa-solid fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2098702368&amp;site=qq&amp;menu=yes"><i class="fa-brands fa-qq"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://aaaaaaqqqqqq.top" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">6a6q</span></span><span class="level-right"><span class="level-item tag">aaaaaaqqqqqq.top</span></span></a></li><li><a class="level is-mobile" href="https://www.cnblogs.com/luobi" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">e_m_g</span></span><span class="level-right"><span class="level-item tag">www.cnblogs.com</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-01-05T16:00:00.000Z">2024-01-06</time></p><p class="title"><a href="/2024/01/06/0106%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/">0106考试总结</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">学习总结</a> / <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E8%80%83%E8%AF%95/">考试</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-01-01T16:00:00.000Z">2024-01-02</time></p><p class="title"><a href="/2024/01/02/Memory%20Cache/">Memory Cache</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a> / <a href="/categories/%E9%9A%8F%E7%AC%94/%E4%BC%98%E5%8C%96/">优化</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-12-31T16:00:00.000Z">2024-01-01</time></p><p class="title"><a href="/2024/01/01/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%9F%BA%E7%A1%80/">最短路基础</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">学习总结</a> / <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%AE%BA/">图论</a> / <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF/">最短路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-12-31T16:00:00.000Z">2024-01-01</time></p><p class="title"><a href="/2024/01/01/%E6%9C%80%E7%9F%AD%E8%B7%AF%E6%8A%80%E5%B7%A7/">最短路技巧</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">学习总结</a> / <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%AE%BA/">图论</a> / <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF/">最短路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-12-29T16:00:00.000Z">2023-12-30</time></p><p class="title"><a href="/2023/12/30/%E9%A2%98%E7%9B%AE%E6%80%9D%E8%B7%AF%E5%AD%98%E5%82%A8/">题目思路存储</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/01/"><span class="level-start"><span class="level-item">一月 2024</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/12/"><span class="level-start"><span class="level-item">十二月 2023</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/11/"><span class="level-start"><span class="level-item">十一月 2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/10/"><span class="level-start"><span class="level-item">十月 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/07/"><span class="level-start"><span class="level-item">七月 2023</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/05/"><span class="level-start"><span class="level-item">五月 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/"><span class="tag">乘法逆元</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"><span class="tag">二分图</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BC%98%E5%8C%96/"><span class="tag">优化</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"><span class="tag">动态规划</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA/"><span class="tag">图论</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%98%E5%82%A8/"><span class="tag">存储</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%80%9D%E6%83%B3/"><span class="tag">思想</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%80%BB%E7%BB%93/"><span class="tag">总结</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8A%80%E5%B7%A7/"><span class="tag">技巧</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/"><span class="tag">排列组合</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="tag">数据结构</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"><span class="tag">最短路</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AC%A7%E6%8B%89%E5%8F%8D%E6%BC%94/"><span class="tag">欧拉反演</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B8%B8%E8%AE%B0/"><span class="tag">游记</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"><span class="tag">背包问题</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/"><span class="tag">解题报告</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BF%9E%E9%80%9A%E5%9D%97/"><span class="tag">连通块</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A2%98%E8%A7%A3/"><span class="tag">题解</span><span class="tag">4</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="LynxCat&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2024 LynxCat</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="My Github" href="https://github.com/lynxcatt/"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
